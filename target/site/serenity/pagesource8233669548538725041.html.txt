@@ -1,0 +1,65 @@
+<html ng-app="app" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <meta charset="utf-8">
+    <title>AngularJS User Registration and Login Example</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="app-content/app.css" rel="stylesheet">
+</head>
+<body style="">
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- ngIf: flash --><div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message" class="ng-binding ng-scope alert alert-success">Registration successful</div><!-- end ngIf: flash -->
+                <!-- ngView:  --><div ng-view="" class="ng-scope"><div class="col-md-6 col-md-offset-3 ng-scope">
+    <h2>Login</h2>
+    <form name="form" ng-submit="vm.login()" role="form" class="ng-pristine ng-invalid ng-invalid-required">
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty &amp;&amp; form.username.$error.required }">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control ng-pristine ng-invalid ng-invalid-required" ng-model="vm.username" required="">
+            <span ng-show="form.username.$dirty &amp;&amp; form.username.$error.required" class="help-block ng-hide">Username is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty &amp;&amp; form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control ng-pristine ng-invalid ng-invalid-required" ng-model="vm.password" required="">
+            <span ng-show="form.password.$dirty &amp;&amp; form.password.$error.required" class="help-block ng-hide">Password is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" disabled="disabled">Login</button>
+            <!-- ngIf: vm.dataLoading -->
+            <a href="#/register" class="btn btn-link">Register</a>
+        </div>
+    </form>
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="credits text-center">
+        <p>
+            AngularJS User Registration and Login Example
+        </p>
+        <p>
+            <a href="http://GlobalSQA.com">GlobalSQA.com</a>
+        </p>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+
+    <script src="app.js"></script>
+    <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="app-services/user.service.local-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
+
+</body></html>

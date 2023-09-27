@@ -1,0 +1,55 @@
+<html ng-app="app" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <meta charset="utf-8">
+    <title>AngularJS User Registration and Login Example</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="app-content/app.css" rel="stylesheet">
+</head>
+<body style="">
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- ngIf: flash -->
+                <!-- ngView:  --><div ng-view="" class="ng-scope"><h1 class="ng-binding ng-scope">Hi Julian!</h1>
+<p class="ng-scope">You're logged in!!</p>
+<h3 class="ng-scope">All registered users:</h3>
+<ul class="ng-scope">
+    <!-- ngRepeat: user in vm.allUsers --><li ng-repeat="user in vm.allUsers" class="ng-binding ng-scope">
+        Jcarreño (Julian Carreño)
+        - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
+    </li><!-- end ngRepeat: user in vm.allUsers -->
+</ul>
+<p class="ng-scope">&nbsp;</p>
+<p class="ng-scope"><a href="#/login" class="btn btn-primary">Logout</a></p></div>
+            </div>
+        </div>
+    </div>
+    <div class="credits text-center">
+        <p>
+            AngularJS User Registration and Login Example
+        </p>
+        <p>
+            <a href="http://GlobalSQA.com">GlobalSQA.com</a>
+        </p>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+
+    <script src="app.js"></script>
+    <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="app-services/user.service.local-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
+
+</body></html>
